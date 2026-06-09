@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stop Winging It — Talk Feedback</title>
+<title>Stop Winging It — Luisa Salcedo</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23119692'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='bold' fill='white'>LS</text></svg>">
 <style>
@@ -14,216 +14,239 @@
   --amber:#ffa836;--amber-light:#fff4e6;--amber-dark:#b87420;
   --cream:#f2eeed;--dark:#1a1a1a;--mid:#4a4a4a;--muted:#888;--border:#e0dbd9;
 }
-body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--dark);min-height:100vh}
-
-.topbar{background:var(--dark);padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
+.topbar{background:var(--dark);padding:14px 20px;position:sticky;top:0;z-index:100}
 .topbar-name{font-family:'DM Serif Display',serif;color:#fff;font-size:17px}
 .topbar-sub{font-size:10px;color:var(--amber);letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-top:2px}
 
-.context-banner{background:#fff;border-bottom:1px solid var(--border);padding:16px 20px;display:flex;gap:16px;align-items:flex-start}
-.context-icon{width:36px;height:36px;border-radius:50%;background:var(--teal-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.context-icon svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2}
-.context-text h2{font-family:'DM Serif Display',serif;font-size:16px;color:var(--dark);margin-bottom:4px}
-.context-text p{font-size:12px;color:var(--mid);line-height:1.6}
-.context-text strong{color:var(--teal);font-weight:600}
+.hero{background:#fff;padding:40px 20px;text-align:center;border-bottom:1px solid var(--border)}
+.hero-tag{font-size:11px;color:var(--teal);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.hero h1{font-family:'DM Serif Display',serif;font-size:44px;color:var(--dark);margin-bottom:8px;line-height:1.1}
+@media(max-width:640px){.hero h1{font-size:32px}}
+.hero-sub{font-size:18px;color:var(--teal);font-weight:500;margin-bottom:20px}
+@media(max-width:640px){.hero-sub{font-size:16px}}
+.hero-desc{font-size:15px;color:var(--mid);max-width:720px;margin:0 auto 24px;line-height:1.8}
 
-.main{max-width:1100px;margin:0 auto;padding:20px 16px;display:grid;grid-template-columns:1fr 320px;gap:20px}
-@media(max-width:800px){.main{grid-template-columns:1fr;padding:12px}}
+.the-ask{background:var(--teal-light);border:2px solid var(--teal);border-radius:12px;padding:20px;margin:20px auto;max-width:720px;text-align:center}
+.the-ask p{font-size:14px;color:var(--dark);margin-bottom:8px}
+.the-ask strong{color:var(--teal-dark);font-weight:600}
+.deadline{font-size:13px;color:var(--coral);font-weight:600;margin-top:12px}
 
-.left-col{display:flex;flex-direction:column;gap:16px}
-.right-col{display:flex;flex-direction:column;gap:16px}
+.content{max-width:1000px;margin:0 auto;padding:40px 20px}
+@media(max-width:640px){.content{padding:24px 16px}}
 
-.video-wrap{position:relative;width:100%;padding-bottom:56.25%;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.12)}
+.three-moves{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin:40px 0}
+.move{background:#fff;border-radius:10px;border:1px solid var(--border);padding:28px 24px}
+.move-num{font-family:'DM Serif Display',serif;font-size:32px;color:var(--teal);margin-bottom:8px}
+.move h3{font-size:16px;color:var(--dark);margin-bottom:12px;font-weight:600}
+.move p{font-size:14px;color:var(--mid);line-height:1.7}
+
+.divider{height:1px;background:var(--border);margin:40px 0}
+
+.inaction-box{background:var(--coral-light);border-left:4px solid var(--coral);border-radius:8px;padding:20px;margin:32px 0}
+.inaction-box h4{font-size:13px;color:var(--coral-dark);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.inaction-box p{font-size:14px;color:var(--coral-dark);line-height:1.7}
+
+.video-section{margin:40px 0}
+.video-wrap{position:relative;width:100%;padding-bottom:56.25%;background:#000;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.15);margin-bottom:20px}
 .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
 
-.card{background:#fff;border-radius:10px;border:1px solid var(--border);overflow:hidden}
-.card-header{padding:11px 16px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
+.overlay-controls{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10;flex-wrap:wrap;justify-content:center;width:calc(100% - 32px)}
+.react-btn-overlay{padding:9px 14px;border-radius:8px;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;display:flex;align-items:center;gap:5px;transition:all .15s;backdrop-filter:blur(8px);background:rgba(255,255,255,.9)}
+.react-btn-overlay .ico{font-size:14px}
+.react-btn-overlay.love{color:var(--teal-dark)}
+.react-btn-overlay.love:hover{background:rgba(255,255,255,1);transform:scale(1.05)}
+.react-btn-overlay.work{color:var(--amber-dark)}
+.react-btn-overlay.work:hover{background:rgba(255,255,255,1);transform:scale(1.05)}
+.react-btn-overlay.clarity{color:var(--coral-dark)}
+.react-btn-overlay.clarity:hover{background:rgba(255,255,255,1);transform:scale(1.05)}
 
-.chapters{display:flex;flex-direction:column}
-.ch-btn{padding:11px 16px;background:none;border:none;border-bottom:.5px solid var(--border);cursor:pointer;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;color:var(--mid);text-align:left;display:flex;align-items:center;gap:10px;transition:background .15s;width:100%}
-.ch-btn:last-child{border-bottom:none}
+.chapters{display:flex;flex-direction:column;gap:0;margin-bottom:20px}
+.ch-btn{padding:11px 16px;background:#fff;border:1px solid var(--border);border-bottom:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;color:var(--mid);text-align:left;display:flex;align-items:center;gap:10px;width:100%;transition:background .15s}
+.ch-btn:last-child{border-bottom:1px solid var(--border)}
 .ch-btn:hover{background:var(--teal-light);color:var(--teal-dark)}
 .ch-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0}
 .ch-time{font-size:11px;color:var(--muted);font-weight:400;margin-left:auto}
 
-.comment-body{padding:14px 16px}
-.comment-row{display:flex;gap:10px;align-items:flex-end}
-.comment-input{flex:1;font-family:'Montserrat',sans-serif;font-size:13px;padding:10px 13px;border:1px solid var(--border);border-radius:8px;resize:none;color:var(--dark);background:var(--cream);min-height:42px;max-height:90px;line-height:1.5}
-.comment-input:focus{outline:none;border-color:var(--teal)}
-.send-btn{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:10px 16px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .15s}
-.send-btn:hover{background:var(--teal-dark)}
-.comment-log{margin-top:12px;display:flex;flex-direction:column;gap:7px;max-height:150px;overflow-y:auto}
-.comment-item{background:var(--cream);border-radius:6px;padding:8px 11px;font-size:12px;color:var(--mid);display:flex;gap:9px;align-items:flex-start}
-.comment-ts{font-size:10px;color:var(--teal);font-weight:600;white-space:nowrap;margin-top:1px}
-.comment-chapter{font-size:10px;color:var(--muted);font-style:italic;margin-top:2px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+@media(max-width:680px){.two-col{grid-template-columns:1fr}}
 
-.react-section{padding:16px}
-.react-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
-.react-btn{padding:13px 16px;border-radius:10px;border:2px solid transparent;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;text-align:left;transition:all .15s;display:flex;align-items:center;gap:10px;width:100%}
-.react-btn .icon{font-size:18px;line-height:1;flex-shrink:0}
-.react-btn.love{background:var(--teal-light);color:var(--teal-dark);border-color:var(--teal)}
-.react-btn.love:hover,.react-btn.love.flash{background:var(--teal);color:#fff}
-.react-btn.work{background:var(--amber-light);color:var(--amber-dark);border-color:var(--amber)}
-.react-btn.work:hover,.react-btn.work.flash{background:var(--amber);color:#fff}
-.react-btn.clarity{background:var(--coral-light);color:var(--coral-dark);border-color:var(--coral)}
-.react-btn.clarity:hover,.react-btn.clarity.flash{background:var(--coral);color:#fff}
-.swipe-hint{text-align:center;font-size:10px;color:var(--muted);letter-spacing:.04em;margin-bottom:10px}
-.reaction-log{display:flex;flex-direction:column;gap:6px;max-height:120px;overflow-y:auto}
+.card{background:#fff;border-radius:10px;border:1px solid var(--border);overflow:hidden}
+.card-header{padding:11px 16px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
+.card-body{padding:14px 16px}
+
+.comment-row{display:flex;gap:8px;align-items:flex-start}
+.comment-input{flex:1;font-family:'Montserrat',sans-serif;font-size:13px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;resize:none;color:var(--dark);background:var(--cream);min-height:42px;line-height:1.5;width:100%}
+.comment-input:focus{outline:none;border-color:var(--teal)}
+.send-btn{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .15s;margin-top:0}
+.send-btn:hover{background:var(--teal-dark)}
+.comment-log{margin-top:12px;display:flex;flex-direction:column;gap:6px;max-height:140px;overflow-y:auto}
+.comment-item{background:var(--cream);border-radius:6px;padding:8px 11px;font-size:12px;color:var(--mid);display:flex;gap:8px;align-items:flex-start}
+.comment-ts{font-size:10px;color:var(--teal);font-weight:600;white-space:nowrap;margin-top:1px;flex-shrink:0}
+.comment-ch{font-size:10px;color:var(--muted);font-style:italic;margin-top:3px}
+
+.reaction-log{display:flex;flex-direction:column;gap:6px;max-height:120px;overflow-y:auto;margin-top:8px}
 .reaction-item{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--mid)}
-.rpill{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.rpill{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap;flex-shrink:0}
 .rpill.love{background:var(--teal-light);color:var(--teal-dark)}
 .rpill.work{background:var(--amber-light);color:var(--amber-dark)}
 .rpill.clarity{background:var(--coral-light);color:var(--coral-dark)}
 
-.final-section{padding:16px;display:flex;flex-direction:column;gap:13px}
+.final-body{padding:16px;display:flex;flex-direction:column;gap:12px}
 .field-label{display:block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
-.field-input{width:100%;font-family:'Montserrat',sans-serif;font-size:12px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;resize:none;height:68px;color:var(--dark);background:var(--cream)}
+.field-input{width:100%;font-family:'Montserrat',sans-serif;font-size:12px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;resize:none;height:64px;color:var(--dark);background:var(--cream)}
 .field-input:focus{outline:none;border-color:var(--teal)}
 .name-input{width:100%;font-family:'Montserrat',sans-serif;font-size:13px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;color:var(--dark);background:var(--cream)}
 .name-input:focus{outline:none;border-color:var(--teal)}
-
-.rating-grid{display:flex;flex-direction:column;gap:7px;margin-bottom:4px}
-.rating-btn{padding:11px 16px;border-radius:8px;border:2px solid transparent;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;text-align:left;transition:all .15s;display:flex;align-items:center;gap:10px}
-.rating-btn .icon{font-size:16px}
-.rating-btn.love{background:var(--teal-light);color:var(--teal-dark);border-color:var(--teal)}
-.rating-btn.love:hover,.rating-btn.love.selected{background:var(--teal);color:#fff}
-.rating-btn.work{background:var(--amber-light);color:var(--amber-dark);border-color:var(--amber)}
-.rating-btn.work:hover,.rating-btn.work.selected{background:var(--amber);color:#fff}
-.rating-btn.clarity{background:var(--coral-light);color:var(--coral-dark);border-color:var(--coral)}
-.rating-btn.clarity:hover,.rating-btn.clarity.selected{background:var(--coral);color:#fff}
-
-.submit-btn{width:100%;padding:14px;background:var(--dark);color:#fff;border:none;border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;cursor:pointer;transition:background .15s;letter-spacing:.02em}
+.submit-btn{width:100%;padding:14px;background:var(--dark);color:#fff;border:none;border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;cursor:pointer;transition:background .15s;letter-spacing:.02em;margin-top:4px}
 .submit-btn:hover{background:var(--teal-dark)}
 .submit-btn:disabled{background:#ccc;cursor:not-allowed}
 
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--dark);color:#fff;padding:11px 22px;border-radius:8px;font-size:12px;font-weight:500;transition:transform .3s ease;z-index:999;pointer-events:none;white-space:nowrap}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--dark);color:#fff;padding:11px 22px;border-radius:8px;font-size:12px;font-weight:500;transition:transform .3s ease;z-index:999;pointer-events:none;white-space:nowrap;max-width:90vw;text-align:center}
 .toast.show{transform:translateX(-50%) translateY(0)}
-
 .success-overlay{display:none;position:fixed;inset:0;background:var(--teal);z-index:1000;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px}
 .success-overlay.show{display:flex}
-.success-overlay h2{font-family:'DM Serif Display',serif;font-size:34px;color:#fff;margin-bottom:14px}
-.success-overlay p{font-size:15px;color:rgba(255,255,255,.85);max-width:380px;line-height:1.7}
+.success-overlay h2{font-family:'DM Serif Display',serif;font-size:32px;color:#fff;margin-bottom:12px}
+.success-overlay p{font-size:14px;color:rgba(255,255,255,.85);max-width:360px;line-height:1.7}
+
+.footer{background:#fff;border-top:1px solid var(--border);padding:32px 20px;text-align:center;color:var(--mid);font-size:13px}
+.footer a{color:var(--teal);text-decoration:none;font-weight:600}
+.footer a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <div>
-    <div class="topbar-name">Luisa Salcedo</div>
-    <div class="topbar-sub">Stop Winging It — Talk Feedback</div>
+  <div class="topbar-name">Luisa Salcedo</div>
+  <div class="topbar-sub">Stop Winging It — Talk Feedback</div>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Signature Keynote — 20 Minutes</div>
+  <h1>Stop Winging It</h1>
+  <p class="hero-sub">Why Operations Changes Everything</p>
+  <p class="hero-desc">What if the constraint you have been fighting is actually the thing that sets you free?</p>
+  
+  <div class="the-ask">
+    <p>This talk is being tested for <strong>paid speaking stages</strong> and eventually <strong>TEDx</strong>. I chose you specifically because you understand what it takes to get there. <strong>Your feedback shapes the final version.</strong></p>
+    <div class="deadline">Deadline: June 22, 2026</div>
   </div>
 </div>
 
-<div class="context-banner">
-  <div class="context-icon">
-    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-  </div>
-  <div class="context-text">
-    <h2>You are watching a signature talk in progress.</h2>
-    <p>This is <strong>Stop Winging It: Why Operations Changes Everything</strong> — a talk Luisa is developing toward paid speaking stages and, long term, TEDx. Your feedback shapes whether this talk is ready for those rooms. Watch as much or as little as you want. <strong>React at any moment. Comment at any moment.</strong> Use the chapter buttons to jump to any section. Three reactions available: <strong>I Love This, Needs Work, Needs Clarity.</strong></p>
-  </div>
-</div>
+<div class="content">
 
-<div class="main">
-  <div class="left-col">
+  <p style="font-size:15px;color:var(--mid);line-height:1.8;max-width:720px;margin:0 auto 32px">This talk reframes operations from a back-office business function into the discipline that shapes every life and every business that actually works. Using nothing more than an 18 by 14 inch suitcase and two weeks of life packed inside it, I walk through three moves that change how you make decisions, design for pressure, and build a rhythm that holds without burning you down. This is not a talk about packing. It is a talk about what happens when you stop winging it and start deciding on purpose.</p>
 
-    <div class="video-wrap">
-      <div id="player"></div>
+  <h2 style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--dark);text-align:center;margin-bottom:32px">The Three Moves</h2>
+
+  <div class="three-moves">
+    <div class="move">
+      <div class="move-num">01</div>
+      <h3>Decide What Earns Its Place</h3>
+      <p>Separate the essential from the merely comfortable. Not what might be useful. What earns its place for the person you are becoming.</p>
     </div>
+    <div class="move">
+      <div class="move-num">02</div>
+      <h3>Design for the Constraint</h3>
+      <p>Stop fighting the limit and start mapping it. The constraint is not a wall. It is a design brief, and the opportunity is already inside it.</p>
+    </div>
+    <div class="move">
+      <div class="move-num">03</div>
+      <h3>Define the Rhythm, Not the Heroics</h3>
+      <p>Heroics are a debt that compounds. Build a cadence sized to your real capacity, your real season, your real life.</p>
+    </div>
+  </div>
 
-    <div class="card">
-      <div class="card-header">Jump to any section</div>
-      <div class="chapters">
-        <button class="ch-btn" onclick="seekTo(0)"><span class="ch-dot"></span>The Suitcase<span class="ch-time">0:00</span></button>
-        <button class="ch-btn" onclick="seekTo(66)"><span class="ch-dot"></span>Operations Is Courage in Action<span class="ch-time">1:06</span></button>
-        <button class="ch-btn" onclick="seekTo(141)"><span class="ch-dot"></span>The Inaction Tax<span class="ch-time">2:21</span></button>
-        <button class="ch-btn" onclick="seekTo(266)"><span class="ch-dot"></span>The Suitcase Story<span class="ch-time">4:26</span></button>
-        <button class="ch-btn" onclick="seekTo(403)"><span class="ch-dot"></span>Constraint Is Not the Enemy<span class="ch-time">6:43</span></button>
-        <button class="ch-btn" onclick="seekTo(447)"><span class="ch-dot"></span>The Three Moves<span class="ch-time">7:27</span></button>
-        <button class="ch-btn" onclick="seekTo(911)"><span class="ch-dot"></span>Your Suitcase / Close<span class="ch-time">15:11</span></button>
+  <div class="divider"></div>
+
+  <div class="inaction-box">
+    <h4>The Cost of Not Deciding: The Inaction Tax</h4>
+    <p>Every day you do not decide, something pays the price. Your margins. Your standards. Or the thing you said you would build when life slowed down. It never slows down. That is the tax.</p>
+  </div>
+
+  <div class="video-section" id="videoSection">
+    <div class="video-wrap" id="videoContainer">
+      <div id="player"></div>
+      <div class="overlay-controls">
+        <button class="react-btn-overlay love" onclick="logReaction('I Love This','love')"><span class="ico">❤️</span>Love</button>
+        <button class="react-btn-overlay work" onclick="logReaction('Needs Work','work')"><span class="ico">🔧</span>Work</button>
+        <button class="react-btn-overlay clarity" onclick="logReaction('Needs Clarity','clarity')"><span class="ico">💡</span>Clarity</button>
       </div>
     </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Jump to any section</div>
+    <div class="chapters">
+      <button class="ch-btn" onclick="seekTo(0)"><span class="ch-dot"></span>The Suitcase<span class="ch-time">0:00</span></button>
+      <button class="ch-btn" onclick="seekTo(66)"><span class="ch-dot"></span>Operations Is Courage in Action<span class="ch-time">1:06</span></button>
+      <button class="ch-btn" onclick="seekTo(141)"><span class="ch-dot"></span>The Inaction Tax<span class="ch-time">2:21</span></button>
+      <button class="ch-btn" onclick="seekTo(266)"><span class="ch-dot"></span>The Suitcase Story<span class="ch-time">4:26</span></button>
+      <button class="ch-btn" onclick="seekTo(403)"><span class="ch-dot"></span>Constraint Is Not the Enemy<span class="ch-time">6:43</span></button>
+      <button class="ch-btn" onclick="seekTo(447)"><span class="ch-dot"></span>The Three Moves<span class="ch-time">7:27</span></button>
+      <button class="ch-btn" onclick="seekTo(911)"><span class="ch-dot"></span>Your Suitcase / Close<span class="ch-time">15:11</span></button>
+    </div>
+  </div>
+
+  <div class="two-col">
 
     <div class="card">
       <div class="card-header">Leave a comment — timestamp captured automatically</div>
-      <div class="comment-body">
+      <div class="card-body">
         <div class="comment-row">
-          <textarea class="comment-input" id="commentInput" placeholder="What are you noticing right now? Hit Enter to send." rows="1"></textarea>
+          <textarea class="comment-input" id="commentInput" placeholder="What are you noticing? Hit Enter to send." rows="2"></textarea>
           <button class="send-btn" onclick="submitComment()">Send</button>
         </div>
         <div class="comment-log" id="commentLog"></div>
       </div>
     </div>
 
-  </div>
-
-  <div class="right-col">
-
     <div class="card">
-      <div class="card-header">Your name</div>
-      <div style="padding:14px 16px">
-        <input class="name-input" type="text" id="reviewerName" placeholder="First name or full name"/>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">React at any moment</div>
-      <div class="react-section">
-        <div class="react-grid">
-          <button class="react-btn love" onclick="logReaction('I Love This','love')">
-            <span class="icon">❤️</span>I Love This
-          </button>
-          <button class="react-btn work" onclick="logReaction('Needs Work','work')">
-            <span class="icon">🔧</span>Needs Work
-          </button>
-          <button class="react-btn clarity" onclick="logReaction('Needs Clarity','clarity')">
-            <span class="icon">💡</span>Needs Clarity
-          </button>
-        </div>
-        <div class="swipe-hint">Mobile: swipe right = I Love This · swipe left = Needs Work</div>
+      <div class="card-header">Your reactions</div>
+      <div class="card-body">
+        <p style="font-size:12px;color:var(--muted);margin-bottom:10px">Reactions logged during the talk</p>
         <div class="reaction-log" id="reactionLog"></div>
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-header">Final feedback</div>
-      <div class="final-section">
-
-        <div>
-          <label class="field-label">Pacing</label>
-          <textarea class="field-input" id="pacingNote" placeholder="Too fast, too slow, just right? Where did you notice it?"></textarea>
-        </div>
-
-        <div>
-          <label class="field-label">Intonation</label>
-          <textarea class="field-input" id="intonationNote" placeholder="Where did her voice land? Where did you lose connection?"></textarea>
-        </div>
-
-        <div>
-          <label class="field-label">Overall rating</label>
-          <div class="rating-grid">
-            <button class="rating-btn love" id="ratingLove" onclick="setFinalRating('I Love This','love')"><span class="icon">❤️</span>I Love This</button>
-            <button class="rating-btn work" id="ratingWork" onclick="setFinalRating('Needs Work','work')"><span class="icon">🔧</span>Needs Work</button>
-            <button class="rating-btn clarity" id="ratingClarity" onclick="setFinalRating('Needs Clarity','clarity')"><span class="icon">💡</span>Needs Clarity</button>
-          </div>
-        </div>
-
-        <button class="submit-btn" id="submitBtn" onclick="submitAll()">Submit My Feedback</button>
-      </div>
-    </div>
-
   </div>
+
+  <div class="card">
+    <div class="card-header">Final feedback — submit when you are done</div>
+    <div class="final-body">
+      <div>
+        <label class="field-label">Your name</label>
+        <input class="name-input" type="text" id="reviewerName" placeholder="First name or full name"/>
+      </div>
+      <div>
+        <label class="field-label">Pacing</label>
+        <textarea class="field-input" id="pacingNote" placeholder="Too fast, too slow, just right? Where did you notice it?"></textarea>
+      </div>
+      <div>
+        <label class="field-label">Intonation</label>
+        <textarea class="field-input" id="intonationNote" placeholder="Where did her voice land? Where did you lose connection?"></textarea>
+      </div>
+      <button class="submit-btn" id="submitBtn" onclick="submitAll()">Submit My Feedback</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p style="margin-bottom:16px">Questions? Reach out.</p>
+  <p><a href="mailto:luisa@luisasalcedo.com">luisa@luisasalcedo.com</a> | <a href="https://www.linkedin.com/in/luisasalcedo/" target="_blank">LinkedIn</a> | <a href="https://instagram.com/theluisasalcedo" target="_blank">@theluisasalcedo</a></p>
+  <p style="margin-top:16px;font-size:12px;color:var(--muted)">&copy; 2026 Luisa Salcedo Consulting</p>
 </div>
 
 <div class="toast" id="toast"></div>
 <div class="success-overlay" id="successOverlay">
   <h2>Thank you.</h2>
-  <p>Your feedback has been received. Luisa will review every timestamp, every reaction, and every note. This moves the talk forward.</p>
+  <p>Your feedback has been received. Luisa will review every timestamp, every reaction, and every note. This shapes what comes next.</p>
 </div>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-var player,reactions=[],comments=[],finalRating='',touchStartX=0;
+var player,reactions=[],comments=[],touchStartX=0,touchStartY=0,mouseStartX=0,isDragging=false;
 
 function onYouTubeIframeAPIReady(){
   player=new YT.Player('player',{
@@ -236,9 +259,7 @@ function onYouTubeIframeAPIReady(){
 }
 
 function getCurrentTime(){try{return Math.floor(player.getCurrentTime());}catch(e){return 0;}}
-
 function formatTime(s){var m=Math.floor(s/60),sec=s%60;return m+':'+(sec<10?'0':'')+sec;}
-
 function getChapter(s){
   if(s<66)return'The Suitcase';
   if(s<141)return'Operations Is Courage in Action';
@@ -248,8 +269,7 @@ function getChapter(s){
   if(s<911)return'The Three Moves';
   return'Your Suitcase / Close';
 }
-
-function seekTo(s){try{player.seekTo(s,true);player.playVideo();}catch(e){}}
+function seekTo(s){try{player.seekTo(s,true);player.playVideo();window.scrollTo({top:document.getElementById('videoSection').offsetTop-100,behavior:'smooth'});}catch(e){}}
 
 function logReaction(label,cls){
   var t=getCurrentTime(),ch=getChapter(t);
@@ -257,9 +277,9 @@ function logReaction(label,cls){
   var log=document.getElementById('reactionLog');
   var item=document.createElement('div');
   item.className='reaction-item';
-  item.innerHTML='<span class="rpill '+cls+'">'+label+'</span><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+ch+'</span><span style="font-size:10px;color:var(--muted);flex-shrink:0">'+formatTime(t)+'</span>';
+  item.innerHTML='<span class="rpill '+cls+'">'+label+'</span><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px">'+ch+'</span><span style="font-size:10px;color:var(--muted);flex-shrink:0;margin-left:4px">'+formatTime(t)+'</span>';
   log.appendChild(item);log.scrollTop=log.scrollHeight;
-  showToast(label+' logged at '+formatTime(t));
+  showToast(label+' at '+formatTime(t));
 }
 
 function submitComment(){
@@ -270,16 +290,9 @@ function submitComment(){
   var log=document.getElementById('commentLog');
   var item=document.createElement('div');
   item.className='comment-item';
-  item.innerHTML='<span class="comment-ts">'+formatTime(t)+'</span><div><div>'+text+'</div><div class="comment-chapter">'+ch+'</div></div>';
+  item.innerHTML='<span class="comment-ts">'+formatTime(t)+'</span><div><div>'+text+'</div><div class="comment-ch">'+ch+'</div></div>';
   log.appendChild(item);log.scrollTop=log.scrollHeight;
   inp.value='';showToast('Comment saved at '+formatTime(t));
-}
-
-function setFinalRating(label,cls){
-  finalRating=label;
-  ['ratingLove','ratingWork','ratingClarity'].forEach(function(id){document.getElementById(id).classList.remove('selected');});
-  var map={'I Love This':'ratingLove','Needs Work':'ratingWork','Needs Clarity':'ratingClarity'};
-  if(map[label])document.getElementById(map[label]).classList.add('selected');
 }
 
 function showToast(msg){
@@ -291,8 +304,6 @@ function showToast(msg){
 function submitAll(){
   var name=document.getElementById('reviewerName').value.trim();
   if(!name){showToast('Please enter your name before submitting.');return;}
-  var pacing=document.getElementById('pacingNote').value.trim();
-  var intonation=document.getElementById('intonationNote').value.trim();
   var reactText=reactions.map(function(r){return r.label+' at '+formatTime(r.time)+' ('+r.chapter+')';}).join(' | ')||'None logged';
   var commText=comments.map(function(c){return '['+formatTime(c.time)+' — '+c.chapter+'] '+c.text;}).join(' || ')||'None left';
   var btn=document.getElementById('submitBtn');
@@ -301,9 +312,9 @@ function submitAll(){
   fd.append('name',name);
   fd.append('reactions',reactText);
   fd.append('comments',commText);
-  fd.append('pacing',pacing||'No note left');
-  fd.append('intonation',intonation||'No note left');
-  fd.append('final_rating',finalRating||'Not selected');
+  fd.append('pacing',document.getElementById('pacingNote').value.trim()||'No note left');
+  fd.append('intonation',document.getElementById('intonationNote').value.trim()||'No note left');
+  fd.append('final_rating',reactions.length>0?reactions[reactions.length-1].label:'Not selected');
   fetch('https://formspree.io/f/mjgdbbjy',{method:'POST',body:fd,headers:{'Accept':'application/json'}})
   .then(function(res){
     if(res.ok){document.getElementById('successOverlay').classList.add('show');}
@@ -311,11 +322,16 @@ function submitAll(){
   }).catch(function(){btn.disabled=false;btn.textContent='Submit My Feedback';showToast('Connection error. Please try again.');});
 }
 
-document.addEventListener('touchstart',function(e){touchStartX=e.changedTouches[0].screenX;},{passive:true});
-document.addEventListener('touchend',function(e){
-  var diff=e.changedTouches[0].screenX-touchStartX;
-  if(Math.abs(diff)>60)logReaction(diff>0?'I Love This':'Needs Work',diff>0?'love':'work');
+document.addEventListener('touchstart',function(e){
+  touchStartX=e.changedTouches[0].screenX;
+  touchStartY=e.changedTouches[0].screenY;
 },{passive:true});
+document.addEventListener('touchend',function(e){
+  var dx=e.changedTouches[0].screenX-touchStartX;
+  var dy=e.changedTouches[0].screenY-touchStartY;
+  if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)logReaction(dx>0?'I Love This':'Needs Work',dx>0?'love':'work');
+},{passive:true});
+
 document.getElementById('commentInput').addEventListener('keydown',function(e){
   if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();submitComment();}
 });
