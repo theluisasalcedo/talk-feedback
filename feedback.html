@@ -8,107 +8,88 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23119692'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='bold' fill='white'>LS</text></svg>">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --teal:#119692;--teal-dark:#0d7470;--teal-light:#e8f6f6;
-  --coral:#c94c3f;--coral-dark:#a33d32;--coral-light:#fdf0ef;
-  --amber:#ffa836;--amber-light:#fff4e6;--amber-dark:#b87420;
-  --cream:#f2eeed;--dark:#1a1a1a;--mid:#4a4a4a;--muted:#888;--border:#e0dbd9;
-}
+:root{--teal:#119692;--teal-dark:#0d7470;--teal-light:#e8f6f6;--coral:#c94c3f;--amber:#ffa836;--amber-light:#fff4e6;--cream:#f2eeed;--dark:#1a1a1a;--mid:#4a4a4a;--muted:#888;--border:#e0dbd9}
 body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
 .topbar{background:var(--dark);padding:14px 20px;position:sticky;top:0;z-index:100}
 .topbar-name{font-family:'DM Serif Display',serif;color:#fff;font-size:17px}
 .topbar-sub{font-size:10px;color:var(--amber);letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-top:2px}
-
 .hero{background:#fff;padding:40px 20px;text-align:center;border-bottom:1px solid var(--border)}
-.hero-tag{font-size:11px;color:var(--teal);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
 .hero h1{font-family:'DM Serif Display',serif;font-size:44px;color:var(--dark);margin-bottom:8px;line-height:1.1}
 @media(max-width:640px){.hero h1{font-size:32px}}
 .hero-sub{font-size:18px;color:var(--teal);font-weight:500;margin-bottom:20px}
-@media(max-width:640px){.hero-sub{font-size:16px}}
 .hero-desc{font-size:15px;color:var(--mid);max-width:720px;margin:0 auto 24px;line-height:1.8}
-
-.the-ask{background:var(--teal-light);border:2px solid var(--teal);border-radius:12px;padding:20px;margin:20px auto;max-width:720px;text-align:center}
-.the-ask p{font-size:14px;color:var(--dark);margin-bottom:8px}
+.the-ask{background:var(--teal-light);border:2px solid var(--teal);border-radius:12px;padding:20px;margin:20px auto;max-width:720px;text-align:center;font-size:14px;color:var(--dark)}
 .the-ask strong{color:var(--teal-dark);font-weight:600}
 .deadline{font-size:13px;color:var(--coral);font-weight:600;margin-top:12px}
-
-.content{max-width:1000px;margin:0 auto;padding:40px 20px}
-@media(max-width:640px){.content{padding:24px 16px}}
-
+.section{max-width:960px;margin:0 auto;padding:40px 20px}
+@media(max-width:640px){.section{padding:24px 16px}}
+.about-section{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start;margin-bottom:40px}
+@media(max-width:800px){.about-section{grid-template-columns:1fr;gap:24px}}
+.about-photo{width:100%;border-radius:12px;overflow:hidden}
+.about-photo img{width:100%;height:auto;display:block}
+.about-text h2{font-family:'DM Serif Display',serif;font-size:28px;color:var(--dark);margin-bottom:8px}
+.about-tag{font-size:10px;color:var(--teal);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.about-desc{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:24px}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+.cred-item{background:var(--teal-light);border-radius:8px;padding:16px;text-align:center}
+.cred-num{font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal-dark);font-weight:600}
+.cred-label{font-size:11px;color:var(--teal-dark);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-top:4px}
+.trusted-title{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.logos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:640px){.logos{grid-template-columns:repeat(2,1fr)}}
+.logo-item{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:80px}
+.logo-item img{max-width:100%;max-height:60px;object-fit:contain}
+.divider{height:1px;background:var(--border);margin:40px 0}
+.big-idea{background:var(--teal-light);border-left:4px solid var(--teal);border-radius:8px;padding:24px;margin:32px 0;font-size:15px;color:var(--dark);line-height:1.8;max-width:720px;margin-left:auto;margin-right:auto}
 .three-moves{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin:40px 0}
 .move{background:#fff;border-radius:10px;border:1px solid var(--border);padding:28px 24px}
 .move-num{font-family:'DM Serif Display',serif;font-size:32px;color:var(--teal);margin-bottom:8px}
 .move h3{font-size:16px;color:var(--dark);margin-bottom:12px;font-weight:600}
 .move p{font-size:14px;color:var(--mid);line-height:1.7}
-
-.divider{height:1px;background:var(--border);margin:40px 0}
-
 .inaction-box{background:var(--coral-light);border-left:4px solid var(--coral);border-radius:8px;padding:20px;margin:32px 0}
-.inaction-box h4{font-size:13px;color:var(--coral-dark);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
-.inaction-box p{font-size:14px;color:var(--coral-dark);line-height:1.7}
-
-.video-section{margin:40px 0}
-.video-wrap{position:relative;width:100%;padding-bottom:56.25%;background:#000;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.15);margin-bottom:20px}
+.inaction-box h4{font-size:13px;color:var(--coral);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.inaction-box p{font-size:14px;color:var(--mid);line-height:1.7}
+.video-wrap{position:relative;width:100%;padding-bottom:56.25%;background:#000;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.15);margin:40px 0}
 .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-
-.overlay-controls{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10;flex-wrap:wrap;justify-content:center;width:calc(100% - 32px)}
-.react-btn-overlay{padding:9px 14px;border-radius:8px;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;display:flex;align-items:center;gap:5px;transition:all .15s;backdrop-filter:blur(8px);background:rgba(255,255,255,.9)}
-.react-btn-overlay .ico{font-size:14px}
-.react-btn-overlay.love{color:var(--teal-dark)}
-.react-btn-overlay.love:hover{background:rgba(255,255,255,1);transform:scale(1.05)}
-.react-btn-overlay.work{color:var(--amber-dark)}
-.react-btn-overlay.work:hover{background:rgba(255,255,255,1);transform:scale(1.05)}
-.react-btn-overlay.clarity{color:var(--coral-dark)}
-.react-btn-overlay.clarity:hover{background:rgba(255,255,255,1);transform:scale(1.05)}
-
-.chapters{display:flex;flex-direction:column;gap:0;margin-bottom:20px}
-.ch-btn{padding:11px 16px;background:#fff;border:1px solid var(--border);border-bottom:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;color:var(--mid);text-align:left;display:flex;align-items:center;gap:10px;width:100%;transition:background .15s}
-.ch-btn:last-child{border-bottom:1px solid var(--border)}
-.ch-btn:hover{background:var(--teal-light);color:var(--teal-dark)}
-.ch-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0}
-.ch-time{font-size:11px;color:var(--muted);font-weight:400;margin-left:auto}
-
+.overlay{position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to top,rgba(0,0,0,.8),transparent);display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;z-index:10}
+.overlay-btns{display:flex;gap:12px;justify-content:center}
+.react-btn{padding:11px 18px;border-radius:8px;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;display:flex;align-items:center;gap:6px;transition:all .15s;background:rgba(255,255,255,.95);color:var(--dark)}
+.react-btn .ico{font-size:16px}
+.react-btn:hover{background:#fff;transform:scale(1.05)}
+.react-btn.active{background:var(--teal);color:#fff}
+.chapter-hint{position:absolute;top:50%;left:0;right:0;pointer-events:none;display:flex;justify-content:space-between;padding:0 20px;font-size:12px;color:rgba(255,255,255,.5)}
+.card{background:#fff;border-radius:10px;border:1px solid var(--border);overflow:hidden;margin-bottom:20px}
+.card-header{padding:11px 16px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
+.card-body{padding:16px}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
 @media(max-width:680px){.two-col{grid-template-columns:1fr}}
-
-.card{background:#fff;border-radius:10px;border:1px solid var(--border);overflow:hidden}
-.card-header{padding:11px 16px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
-.card-body{padding:14px 16px}
-
-.comment-row{display:flex;gap:8px;align-items:flex-start}
-.comment-input{flex:1;font-family:'Montserrat',sans-serif;font-size:13px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;resize:none;color:var(--dark);background:var(--cream);min-height:42px;line-height:1.5;width:100%}
-.comment-input:focus{outline:none;border-color:var(--teal)}
-.send-btn{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .15s;margin-top:0}
-.send-btn:hover{background:var(--teal-dark)}
-.comment-log{margin-top:12px;display:flex;flex-direction:column;gap:6px;max-height:140px;overflow-y:auto}
-.comment-item{background:var(--cream);border-radius:6px;padding:8px 11px;font-size:12px;color:var(--mid);display:flex;gap:8px;align-items:flex-start}
-.comment-ts{font-size:10px;color:var(--teal);font-weight:600;white-space:nowrap;margin-top:1px;flex-shrink:0}
-.comment-ch{font-size:10px;color:var(--muted);font-style:italic;margin-top:3px}
-
-.reaction-log{display:flex;flex-direction:column;gap:6px;max-height:120px;overflow-y:auto;margin-top:8px}
-.reaction-item{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--mid)}
-.rpill{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap;flex-shrink:0}
-.rpill.love{background:var(--teal-light);color:var(--teal-dark)}
-.rpill.work{background:var(--amber-light);color:var(--amber-dark)}
-.rpill.clarity{background:var(--coral-light);color:var(--coral-dark)}
-
-.final-body{padding:16px;display:flex;flex-direction:column;gap:12px}
 .field-label{display:block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
 .field-input{width:100%;font-family:'Montserrat',sans-serif;font-size:12px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;resize:none;height:64px;color:var(--dark);background:var(--cream)}
 .field-input:focus{outline:none;border-color:var(--teal)}
 .name-input{width:100%;font-family:'Montserrat',sans-serif;font-size:13px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;color:var(--dark);background:var(--cream)}
 .name-input:focus{outline:none;border-color:var(--teal)}
-.submit-btn{width:100%;padding:14px;background:var(--dark);color:#fff;border:none;border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;cursor:pointer;transition:background .15s;letter-spacing:.02em;margin-top:4px}
+.comment-row{display:flex;gap:8px;align-items:flex-start}
+.comment-input{flex:1;font-family:'Montserrat',sans-serif;font-size:13px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;resize:none;color:var(--dark);background:var(--cream);min-height:42px;line-height:1.5;width:100%}
+.comment-input:focus{outline:none;border-color:var(--teal)}
+.send-btn{background:var(--teal);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .15s}
+.send-btn:hover{background:var(--teal-dark)}
+.comment-log{margin-top:12px;display:flex;flex-direction:column;gap:6px;max-height:140px;overflow-y:auto}
+.comment-item{background:var(--cream);border-radius:6px;padding:8px 11px;font-size:12px;color:var(--mid);display:flex;gap:8px}
+.comment-ts{font-size:10px;color:var(--teal);font-weight:600;white-space:nowrap}
+.reaction-log{display:flex;flex-direction:column;gap:6px;max-height:120px;overflow-y:auto}
+.reaction-item{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--mid)}
+.rpill{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.rpill.love{background:var(--teal-light);color:var(--teal-dark)}
+.rpill.work{background:var(--amber-light);color:var(--amber-dark)}
+.submit-btn{width:100%;padding:14px;background:var(--dark);color:#fff;border:none;border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;cursor:pointer;transition:background .15s;margin-top:4px}
 .submit-btn:hover{background:var(--teal-dark)}
 .submit-btn:disabled{background:#ccc;cursor:not-allowed}
-
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--dark);color:#fff;padding:11px 22px;border-radius:8px;font-size:12px;font-weight:500;transition:transform .3s ease;z-index:999;pointer-events:none;white-space:nowrap;max-width:90vw;text-align:center}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--dark);color:#fff;padding:11px 22px;border-radius:8px;font-size:12px;font-weight:500;transition:transform .3s ease;z-index:999;pointer-events:none;white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .success-overlay{display:none;position:fixed;inset:0;background:var(--teal);z-index:1000;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px}
 .success-overlay.show{display:flex}
 .success-overlay h2{font-family:'DM Serif Display',serif;font-size:32px;color:#fff;margin-bottom:12px}
 .success-overlay p{font-size:14px;color:rgba(255,255,255,.85);max-width:360px;line-height:1.7}
-
 .footer{background:#fff;border-top:1px solid var(--border);padding:32px 20px;text-align:center;color:var(--mid);font-size:13px}
 .footer a{color:var(--teal);text-decoration:none;font-weight:600}
 .footer a:hover{text-decoration:underline}
@@ -122,20 +103,51 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--dar
 </div>
 
 <div class="hero">
-  <div class="hero-tag">Signature Keynote — 20 Minutes</div>
   <h1>Stop Winging It</h1>
   <p class="hero-sub">Why Operations Changes Everything</p>
   <p class="hero-desc">What if the constraint you have been fighting is actually the thing that sets you free?</p>
-  
   <div class="the-ask">
     <p>This talk is being tested for <strong>paid speaking stages</strong> and eventually <strong>TEDx</strong>. I chose you specifically because you understand what it takes to get there. <strong>Your feedback shapes the final version.</strong></p>
     <div class="deadline">Deadline: June 22, 2026</div>
   </div>
 </div>
 
-<div class="content">
+<div class="section">
 
-  <p style="font-size:15px;color:var(--mid);line-height:1.8;max-width:720px;margin:0 auto 32px">This talk reframes operations from a back-office business function into the discipline that shapes every life and every business that actually works. Using nothing more than an 18 by 14 inch suitcase and two weeks of life packed inside it, I walk through three moves that change how you make decisions, design for pressure, and build a rhythm that holds without burning you down. This is not a talk about packing. It is a talk about what happens when you stop winging it and start deciding on purpose.</p>
+  <div class="about-section">
+    <div class="about-photo">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Crect fill='%23e0dbd9' width='300' height='400'/%3E%3C/svg%3E" alt="Luisa Salcedo">
+    </div>
+    <div class="about-text">
+      <div class="about-tag">About</div>
+      <h2>Luisa Salcedo</h2>
+      <p class="about-desc">Fractional COO for $5M+ founders who can't afford to stay the bottleneck. A decade across logistics, CPG, and operations taught Luisa that clarity, not hustle, is what scales. She installs the operational backbone that frees founders to lead vision and growth instead of living inside execution.</p>
+      <div class="creds">
+        <div class="cred-item">
+          <div class="cred-num">$3B</div>
+          <div class="cred-label">Inventory Managed</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-num">$50M</div>
+          <div class="cred-label">Cargo Week</div>
+        </div>
+      </div>
+      <div class="cred-item" style="grid-column:1/-1">
+        <div class="cred-num" style="font-size:20px">M&A</div>
+        <div class="cred-label">SOPs That Survived Acquisitions</div>
+      </div>
+      <div class="trusted-title">Trusted by</div>
+      <div class="logos">
+        <div class="logo-item" style="background:#f5f5f5"><strong style="color:var(--dark);font-size:12px">Pepsico</strong></div>
+        <div class="logo-item" style="background:#f5f5f5"><strong style="color:var(--dark);font-size:12px">Kroger</strong></div>
+        <div class="logo-item" style="background:#f5f5f5"><strong style="color:var(--dark);font-size:12px">Costco</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:32px">This talk reframes operations from a back-office business function into the discipline that shapes every life and every business that actually works. Using nothing more than an 18 by 14 inch suitcase and two weeks of life packed inside it, I walk through three moves that change how you make decisions, design for pressure, and build a rhythm that holds without burning you down. This is not a talk about packing. It is a talk about what happens when you stop winging it and start deciding on purpose.</p>
 
   <h2 style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--dark);text-align:center;margin-bottom:32px">The Three Moves</h2>
 
@@ -157,76 +169,62 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--dar
     </div>
   </div>
 
-  <div class="divider"></div>
-
   <div class="inaction-box">
     <h4>The Cost of Not Deciding: The Inaction Tax</h4>
     <p>Every day you do not decide, something pays the price. Your margins. Your standards. Or the thing you said you would build when life slowed down. It never slows down. That is the tax.</p>
   </div>
 
-  <div class="video-section" id="videoSection">
-    <div class="video-wrap" id="videoContainer">
-      <div id="player"></div>
-      <div class="overlay-controls">
-        <button class="react-btn-overlay love" onclick="logReaction('I Love This','love')"><span class="ico">❤️</span>Love</button>
-        <button class="react-btn-overlay work" onclick="logReaction('Needs Work','work')"><span class="ico">🔧</span>Work</button>
-        <button class="react-btn-overlay clarity" onclick="logReaction('Needs Clarity','clarity')"><span class="ico">💡</span>Clarity</button>
+  <div class="video-wrap" id="videoContainer">
+    <div id="player"></div>
+    <div class="chapter-hint">
+      <span>↑ Swipe up for next chapter</span>
+      <span>Swipe left/right to react ↔</span>
+      <span>↓ Swipe down for previous chapter</span>
+    </div>
+    <div class="overlay">
+      <div class="overlay-btns">
+        <button class="react-btn love" onclick="logReaction('I Love This','love')" id="btnLove"><span class="ico">❤️</span>Love</button>
+        <button class="react-btn work" onclick="logReaction('Needs Work','work')" id="btnWork"><span class="ico">🔧</span>Work</button>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-header">Jump to any section</div>
-    <div class="chapters">
-      <button class="ch-btn" onclick="seekTo(0)"><span class="ch-dot"></span>The Suitcase<span class="ch-time">0:00</span></button>
-      <button class="ch-btn" onclick="seekTo(66)"><span class="ch-dot"></span>Operations Is Courage in Action<span class="ch-time">1:06</span></button>
-      <button class="ch-btn" onclick="seekTo(141)"><span class="ch-dot"></span>The Inaction Tax<span class="ch-time">2:21</span></button>
-      <button class="ch-btn" onclick="seekTo(266)"><span class="ch-dot"></span>The Suitcase Story<span class="ch-time">4:26</span></button>
-      <button class="ch-btn" onclick="seekTo(403)"><span class="ch-dot"></span>Constraint Is Not the Enemy<span class="ch-time">6:43</span></button>
-      <button class="ch-btn" onclick="seekTo(447)"><span class="ch-dot"></span>The Three Moves<span class="ch-time">7:27</span></button>
-      <button class="ch-btn" onclick="seekTo(911)"><span class="ch-dot"></span>Your Suitcase / Close<span class="ch-time">15:11</span></button>
-    </div>
-  </div>
-
-  <div class="two-col">
-
-    <div class="card">
-      <div class="card-header">Leave a comment — timestamp captured automatically</div>
-      <div class="card-body">
-        <div class="comment-row">
-          <textarea class="comment-input" id="commentInput" placeholder="What are you noticing? Hit Enter to send." rows="2"></textarea>
-          <button class="send-btn" onclick="submitComment()">Send</button>
-        </div>
-        <div class="comment-log" id="commentLog"></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">Your reactions</div>
-      <div class="card-body">
-        <p style="font-size:12px;color:var(--muted);margin-bottom:10px">Reactions logged during the talk</p>
-        <div class="reaction-log" id="reactionLog"></div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="card">
-    <div class="card-header">Final feedback — submit when you are done</div>
-    <div class="final-body">
-      <div>
+    <div class="card-header">Your feedback</div>
+    <div class="card-body">
+      <div style="margin-bottom:16px">
         <label class="field-label">Your name</label>
         <input class="name-input" type="text" id="reviewerName" placeholder="First name or full name"/>
       </div>
-      <div>
-        <label class="field-label">Pacing</label>
-        <textarea class="field-input" id="pacingNote" placeholder="Too fast, too slow, just right? Where did you notice it?"></textarea>
-      </div>
-      <div>
-        <label class="field-label">Intonation</label>
-        <textarea class="field-input" id="intonationNote" placeholder="Where did her voice land? Where did you lose connection?"></textarea>
+      <div class="two-col">
+        <div>
+          <label class="field-label">Pacing</label>
+          <textarea class="field-input" id="pacingNote" placeholder="Too fast, too slow, just right? Where did you notice it?"></textarea>
+        </div>
+        <div>
+          <label class="field-label">Intonation</label>
+          <textarea class="field-input" id="intonationNote" placeholder="Where did her voice land? Where did you lose connection?"></textarea>
+        </div>
       </div>
       <button class="submit-btn" id="submitBtn" onclick="submitAll()">Submit My Feedback</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Your reactions</div>
+    <div class="card-body">
+      <div style="margin-bottom:10px">
+        <label class="field-label">Leave comments as you watch</label>
+      </div>
+      <div class="comment-row">
+        <textarea class="comment-input" id="commentInput" placeholder="What are you noticing? Hit Enter to send." rows="2"></textarea>
+        <button class="send-btn" onclick="submitComment()">Send</button>
+      </div>
+      <div class="comment-log" id="commentLog"></div>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+        <p style="font-size:11px;color:var(--muted);margin-bottom:8px">Reactions logged</p>
+        <div class="reaction-log" id="reactionLog"></div>
+      </div>
     </div>
   </div>
 
@@ -246,30 +244,17 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--dar
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-var player,reactions=[],comments=[],touchStartX=0,touchStartY=0,mouseStartX=0,isDragging=false;
+var player,reactions=[],comments=[],currentChapterIdx=0,chapters=[0,66,141,266,403,447,911],touchStartX=0,touchStartY=0,swipeBuffer=0;
+var chapterNames=['The Suitcase','Operations Is Courage in Action','The Inaction Tax','The Suitcase Story','Constraint Is Not the Enemy','The Three Moves','Your Suitcase / Close'];
 
 function onYouTubeIframeAPIReady(){
-  player=new YT.Player('player',{
-    videoId:'q9-1t56Alxs',
-    playerVars:{rel:0,modestbranding:1,color:'white',enablejsapi:1},
-    events:{onStateChange:function(e){
-      if(e.data===YT.PlayerState.ENDED)showToast('Video ended — please leave your final notes and submit.');
-    }}
-  });
+  player=new YT.Player('player',{videoId:'q9-1t56Alxs',playerVars:{rel:0,modestbranding:1,color:'white',enablejsapi:1},events:{onStateChange:function(e){if(e.data===YT.PlayerState.ENDED)showToast('Video ended—please leave your final notes and submit.');}}});
 }
 
 function getCurrentTime(){try{return Math.floor(player.getCurrentTime());}catch(e){return 0;}}
 function formatTime(s){var m=Math.floor(s/60),sec=s%60;return m+':'+(sec<10?'0':'')+sec;}
-function getChapter(s){
-  if(s<66)return'The Suitcase';
-  if(s<141)return'Operations Is Courage in Action';
-  if(s<266)return'The Inaction Tax';
-  if(s<403)return'The Suitcase Story';
-  if(s<447)return'Constraint Is Not the Enemy';
-  if(s<911)return'The Three Moves';
-  return'Your Suitcase / Close';
-}
-function seekTo(s){try{player.seekTo(s,true);player.playVideo();window.scrollTo({top:document.getElementById('videoSection').offsetTop-100,behavior:'smooth'});}catch(e){}}
+function getChapter(s){for(var i=chapters.length-1;i>=0;i--){if(s>=chapters[i])return chapterNames[i];}return chapterNames[0];}
+function seekChapter(idx){if(idx>=0&&idx<chapters.length){player.seekTo(chapters[idx],true);player.playVideo();currentChapterIdx=idx;}}
 
 function logReaction(label,cls){
   var t=getCurrentTime(),ch=getChapter(t);
@@ -277,7 +262,7 @@ function logReaction(label,cls){
   var log=document.getElementById('reactionLog');
   var item=document.createElement('div');
   item.className='reaction-item';
-  item.innerHTML='<span class="rpill '+cls+'">'+label+'</span><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px">'+ch+'</span><span style="font-size:10px;color:var(--muted);flex-shrink:0;margin-left:4px">'+formatTime(t)+'</span>';
+  item.innerHTML='<span class="rpill '+cls+'">'+label+'</span><span>'+ch+'</span><span style="margin-left:auto;font-size:10px;color:var(--muted)">'+formatTime(t)+'</span>';
   log.appendChild(item);log.scrollTop=log.scrollHeight;
   showToast(label+' at '+formatTime(t));
 }
@@ -290,24 +275,19 @@ function submitComment(){
   var log=document.getElementById('commentLog');
   var item=document.createElement('div');
   item.className='comment-item';
-  item.innerHTML='<span class="comment-ts">'+formatTime(t)+'</span><div><div>'+text+'</div><div class="comment-ch">'+ch+'</div></div>';
+  item.innerHTML='<span class="comment-ts">'+formatTime(t)+'</span><div><div>'+text+'</div><div style="font-size:10px;color:var(--muted);margin-top:3px">'+ch+'</div></div>';
   log.appendChild(item);log.scrollTop=log.scrollHeight;
   inp.value='';showToast('Comment saved at '+formatTime(t));
 }
 
-function showToast(msg){
-  var t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(function(){t.classList.remove('show');},2600);
-}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2600);}
 
 function submitAll(){
   var name=document.getElementById('reviewerName').value.trim();
   if(!name){showToast('Please enter your name before submitting.');return;}
-  var reactText=reactions.map(function(r){return r.label+' at '+formatTime(r.time)+' ('+r.chapter+')';}).join(' | ')||'None logged';
-  var commText=comments.map(function(c){return '['+formatTime(c.time)+' — '+c.chapter+'] '+c.text;}).join(' || ')||'None left';
-  var btn=document.getElementById('submitBtn');
-  btn.disabled=true;btn.textContent='Submitting...';
+  var reactText=reactions.map(function(r){return r.label+' at '+formatTime(r.time)+' ('+r.chapter+')'}).join(' | ')||'None logged';
+  var commText=comments.map(function(c){return '['+formatTime(c.time)+' — '+c.chapter+'] '+c.text}).join(' || ')||'None left';
+  var btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Submitting...';
   var fd=new FormData();
   fd.append('name',name);
   fd.append('reactions',reactText);
@@ -315,26 +295,23 @@ function submitAll(){
   fd.append('pacing',document.getElementById('pacingNote').value.trim()||'No note left');
   fd.append('intonation',document.getElementById('intonationNote').value.trim()||'No note left');
   fd.append('final_rating',reactions.length>0?reactions[reactions.length-1].label:'Not selected');
-  fetch('https://formspree.io/f/mjgdbbjy',{method:'POST',body:fd,headers:{'Accept':'application/json'}})
-  .then(function(res){
-    if(res.ok){document.getElementById('successOverlay').classList.add('show');}
-    else{btn.disabled=false;btn.textContent='Submit My Feedback';showToast('Something went wrong. Please try again.');}
-  }).catch(function(){btn.disabled=false;btn.textContent='Submit My Feedback';showToast('Connection error. Please try again.');});
+  fetch('https://formspree.io/f/mjgdbbjy',{method:'POST',body:fd,headers:{'Accept':'application/json'}}).then(function(res){if(res.ok){document.getElementById('successOverlay').classList.add('show');}else{btn.disabled=false;btn.textContent='Submit My Feedback';showToast('Something went wrong. Please try again.');}}).catch(function(){btn.disabled=false;btn.textContent='Submit My Feedback';showToast('Connection error. Please try again.');});
 }
 
-document.addEventListener('touchstart',function(e){
-  touchStartX=e.changedTouches[0].screenX;
-  touchStartY=e.changedTouches[0].screenY;
-},{passive:true});
+document.addEventListener('touchstart',function(e){touchStartX=e.changedTouches[0].screenX;touchStartY=e.changedTouches[0].screenY;swipeBuffer=0;},{passive:true});
 document.addEventListener('touchend',function(e){
   var dx=e.changedTouches[0].screenX-touchStartX;
   var dy=e.changedTouches[0].screenY-touchStartY;
-  if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)logReaction(dx>0?'I Love This':'Needs Work',dx>0?'love':'work');
+  if(Math.abs(dx)>Math.abs(dy)){
+    if(dx>80){logReaction('I Love This','love');}
+    else if(dx<-80){logReaction('Needs Work','work');}
+  }else if(Math.abs(dy)>80){
+    if(dy>0){seekChapter(Math.max(0,currentChapterIdx-1));}
+    else{seekChapter(Math.min(chapters.length-1,currentChapterIdx+1));}
+  }
 },{passive:true});
 
-document.getElementById('commentInput').addEventListener('keydown',function(e){
-  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();submitComment();}
-});
+document.getElementById('commentInput').addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();submitComment();}});
 </script>
 </body>
 </html>
